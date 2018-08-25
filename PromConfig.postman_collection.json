@@ -1,0 +1,71 @@
+{
+	"variables": [],
+	"info": {
+		"name": "PromConfig",
+		"_postman_id": "1be7c581-928b-37ac-c3f1-4685123a5fd1",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Config",
+			"request": {
+				"url": "http://localhost:8080/rest/config/add",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"targets\": [\"mongo:8090\"],\n\t\"labels\": {\"env\": \"prod\", \"service\": \"mongo\"}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Modify Config",
+			"request": {
+				"url": "http://localhost:8080/rest/config/modify",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"targets\": [\"mongo:8090\"],\n\t\"labels\": {\"env\": \"prod\", \"service\": \"mongo2\"}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Config",
+			"request": {
+				"url": "http://localhost:8080/rest/config/delete",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"targets\": [\"mongo:9090\"],\n\t\"labels\": {\"env\": \"prod\", \"service\": \"mongo2\"}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
